@@ -22,9 +22,18 @@
         }
     }
 
-    function playerSelection() {
+    function playerSelection(userInput) {
+        if (userInput.toLowerCase() === 'rock') {
+            return userInput;
+        } else if (userInput.toLowerCase() === 'paper') {
+            return userInput;
+        } else if (userInput.toLowerCase() === 'scissors') {
+            return userInput;
+        } else {console.log('That is not a valid option.')}
+    };
 
-    }
+
+        
 
     
 

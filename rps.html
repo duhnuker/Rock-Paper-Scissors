@@ -22,6 +22,7 @@
         }
     }
 
+
     function playerSelection(userInput) {
         if (userInput.toLowerCase() === 'rock') {
             return userInput;
@@ -33,6 +34,37 @@
     };
 
 
+    function playRound(playerSelection, computerSelection) {
+        switch (playerSelection) {
+            case 'rock':
+                if (computerSelection == 'rock') {
+                    return 'Draw!';
+                } else if (computerSelection == 'paper') {
+                    return 'You lose! Paper beats rock';
+                } else {
+                    return 'You win! Rock beats Scissors';
+                }
+                break;
+            case 'paper':
+                if (computerSelection == 'paper') {
+                    return 'Draw!';
+                } else if (computerSelection == 'scissors') {
+                    return 'You lose! Scissors beats Paper';
+                } else {
+                    return 'You win! Paper beats Rock';
+                }
+                break;
+            case 'scissors':
+                if (computerSelection == 'scissors') {
+                    return 'Draw!';
+                } else if (computerSelection == 'rock') {
+                    return 'You lose! Rock beats Scissors';
+                } else {
+                    return 'You win! Scissors beats Paper';
+                }
+                break;
+        }
+    }
         
 
     

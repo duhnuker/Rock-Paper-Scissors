@@ -42,35 +42,35 @@
         switch (playerSelection) {
             case 'rock':
                 if (computerSelection == 'rock') {
-                    return 'Draw!';
+                    return console.log('Draw!');
                 } else if (computerSelection == 'paper') {
                     compScore++;
-                    return 'You lose! Paper beats rock';
+                    return console.log('You lose! Paper beats rock');
                 } else {
                     playerScore++;
-                    return 'You win! Rock beats Scissors';
+                    return console.log('You win! Rock beats Scissors');
                 }
                 break;
             case 'paper':
                 if (computerSelection == 'paper') {
-                    return 'Draw!';
+                    return console.log('Draw!');
                 } else if (computerSelection == 'scissors') {
                     compScore++;
-                    return 'You lose! Scissors beats Paper';
+                    return console.log('You lose! Scissors beats Paper');
                 } else {
                     playerScore++;
-                    return 'You win! Paper beats Rock';
+                    return console.log('You win! Paper beats Rock');
                 }
                 break;
             case 'scissors':
                 if (computerSelection == 'scissors') {
-                    return 'Draw!';
+                    return console.log('Draw!');
                 } else if (computerSelection == 'rock') {
                     compScore++;
-                    return 'You lose! Rock beats Scissors';
+                    return console.log('You lose! Rock beats Scissors');
                 } else {
                     playerScore++;
-                    return 'You win! Scissors beats Paper';
+                    return console.log('You win! Scissors beats Paper');
                 }
                 break;
         }
@@ -93,6 +93,7 @@
         }
     }
 
+    console.log(game());
 
     </script>
     

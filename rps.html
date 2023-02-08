@@ -82,6 +82,8 @@
             let playerSelection = prompt('Please type in your selection', 'Rock, Paper, Scissors').toLowerCase();
             let computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
+            console.log('Your score: ' + playerScore);
+            console.log('Computer score: ' + compScore);
         }
 
         if (playerScore > compScore) {

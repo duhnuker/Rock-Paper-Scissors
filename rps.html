@@ -26,6 +26,7 @@
     }
 
 
+    //Takes user input, converts to lowercase viable input otherwise asks again for a valid input)//
     function playerSelection(userInput) {
         if (userInput.toLowerCase() === 'rock') {
             return userInput;
@@ -37,7 +38,9 @@
     };
 
 
-
+    //User input is compared to randomly selected computerSelection to determine who wins the round. +1 is added to
+    //whoever the winner of the round, that being playerScore or compScore. is. A console log is also returned presenting the result in
+    //the players pov
     function playRound(playerSelection, computerSelection) {
         switch (playerSelection) {
             case 'rock':
@@ -76,7 +79,10 @@
         }
     }
 
-    
+    //Making use of the other established functions, the game function uses a for loop that makes it so the functions are repeated
+    //5 times. This function prompts for userinput, takes the generated computer selection and plays the rounds.
+    //A console log is also returned each round updating the score
+    //After the for loop is done, the winner, or a tie is returned finally
     function game() {
         for (let i = 0; i < 5; i++) {
             let playerSelection = prompt('Please type in your selection', 'Rock, Paper, Scissors').toLowerCase();

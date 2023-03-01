@@ -8,14 +8,20 @@
 </head>
 <body>
 
+    <div class="running-score">
+        <span class="player-score"></span>
+        <span class="comp-score"></span>
+    </div>
+
     <div class='container'>
         <button class="rock">Rock</button>
         <button class="paper">Paper</button>
         <button class="scissors">Scissors</button>
     </div>
 
-    <div class="result">
-    </div>
+    <div class="result"></div>
+
+    <div class="winner"></div>
 
     <script>
 
@@ -23,6 +29,9 @@
     const paperButton = document.querySelector('.paper');
     const scissorsButton = document.querySelector('.scissors');
     const resultDiv = document.querySelector('.result');
+    const winnerDiv = document.querySelector('.winner');
+    const playerScoreSpan = document.querySelector('.player-score');
+    const compScoreSpan = document.querySelector('.comp-score');
 
     let playerScore = 0;
     let compScore = 0;
@@ -56,54 +65,46 @@
     //whoever the winner of the round, that being playerScore or compScore. is. A console log is also returned presenting the result in
     //the players pov
     function playRound(playerSelection, computerSelection) {
+        const p = document.createElement('p');
         switch (playerSelection) {
             case 'rock':
                 if (computerSelection == 'rock') {
-                    const p = document.createElement('p');
                     p.innerText = 'Draw!';
                     resultDiv.appendChild(p);
                 } else if (computerSelection == 'paper') {
                     compScore++;
-                    const p = document.createElement('p');
                     p.innerText = 'You lose! Paper beats rock';
                     resultDiv.appendChild(p);
                 } else {
                     playerScore++;
-                    const p = document.createElement('p');
                     p.innerText = 'You win! Rock beats Scissors';
                     resultDiv.appendChild(p);
                 }
                 break;
             case 'paper':
                 if (computerSelection == 'paper') {
-                    const p = document.createElement('p');
                     p.innerText = 'Draw!';
                     resultDiv.appendChild(p);
                 } else if (computerSelection == 'scissors') {
                     compScore++;
-                    const p = document.createElement('p');
                     p.innerText = 'You lose! Scissors beats Paper';
                     resultDiv.appendChild(p);
                 } else {
                     playerScore++;
-                    const p = document.createElement('p');
                     p.innerText = 'You win! Paper beats Rock';
                     resultDiv.appendChild(p);
                 }
                 break;
             case 'scissors':
                 if (computerSelection == 'scissors') {
-                    const p = document.createElement('p');
                     p.innerText = 'Draw!';
                     resultDiv.appendChild(p);
                 } else if (computerSelection == 'rock') {
                     compScore++;
-                    const p = document.createElement('p');
                     p.innerText = 'You lose! Rock beats Scissors';
                     resultDiv.appendChild(p);
                 } else {
                     playerScore++;
-                    const p = document.createElement('p');
                     p.innerText = 'You win! Scissors beats Paper';
                     resultDiv.appendChild(p);
                 }
@@ -111,22 +112,45 @@
         }
     }
 
+    const checkForWinner = (playerScore, compScore) => {
+        const h1 = document.createElement('h1');
+        if (playerScore === 5) {
+            h1.innerText = 'You beat the computer, well done!'
+            winnerDiv.appendChild(h1);
+        } else if (compScore === 5) {
+            h1.innerText = 'You lost to the computer, bad luck!'
+            winnerDiv.appendChild(h1);
+        }
+    }
+
+    const updateScores = (playerscore, compScore) => {
+        playerScoreSpan.innerText = `${playerScore}`;
+        compScoreSpan.innerText = `${compScore}`;
+    }
+
+
     rockButton.addEventListener('click', () => {
       const computerSelection = getComputerChoice() //gets computer selection when player selects rock//
       const playerSelection = 'rock' //player selection, this case player clicked button rock//
       playRound(playerSelection, computerSelection);
+      updateScores(playerScore, compScore);
+      checkForWinner(playerScore, compScore);
     })
 
     paperButton.addEventListener('click', () => {
       const computerSelection = getComputerChoice() //gets computer selection when player selects rock//
       const playerSelection = 'paper' //player selection, this case player clicked button rock//
       playRound(playerSelection, computerSelection);
+      updateScores(playerScore, compScore);
+      checkForWinner(playerScore, compScore);
     })
 
     scissorsButton.addEventListener('click', () => {
       const computerSelection = getComputerChoice() //gets computer selection when player selects rock//
       const playerSelection = 'scissors' //player selection, this case player clicked button rock//
       playRound(playerSelection, computerSelection);
+      updateScores(playerScore, compScore);
+      checkForWinner(playerScore, compScore);
     })
 
     //Making use of the other established functions, the game function uses a for loop that makes it so the functions are repeated

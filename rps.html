@@ -9,8 +9,8 @@
 <body>
 
     <div class="running-score">
-        <span class="player-score"></span>
-        <span class="comp-score"></span>
+        <span class="player-score">Player Score: </span>
+        <span class="comp-score">Computer Score: </span>
     </div>
 
     <div class='container'>
@@ -32,6 +32,8 @@
     const winnerDiv = document.querySelector('.winner');
     const playerScoreSpan = document.querySelector('.player-score');
     const compScoreSpan = document.querySelector('.comp-score');
+    const p = document.createElement('p');
+
 
     let playerScore = 0;
     let compScore = 0;
@@ -65,7 +67,6 @@
     //whoever the winner of the round, that being playerScore or compScore. is. A console log is also returned presenting the result in
     //the players pov
     function playRound(playerSelection, computerSelection) {
-        const p = document.createElement('p');
         switch (playerSelection) {
             case 'rock':
                 if (computerSelection == 'rock') {
@@ -123,9 +124,9 @@
         }
     }
 
-    const updateScores = (playerscore, compScore) => {
-        playerScoreSpan.innerText = `${playerScore}`;
-        compScoreSpan.innerText = `${compScore}`;
+    const updateScores = (playerScore, compScore) => {
+        playerScoreSpan.innerText = `Player Score:  ${playerScore}`;
+        compScoreSpan.innerText = `Computer Score:  ${compScore}`;
     }
 
 

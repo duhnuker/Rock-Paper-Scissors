@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/home/dinuka/repos/Rock-Paper-Scissors/style.css">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors</title>
 </head>
 <body>
 
@@ -13,6 +13,23 @@
         <span class="player-score">Player Score: </span>
         <span class="comp-score">Computer Score: </span>
     </div>
+
+    <div class="image-container">
+
+    <div class="rock-image">
+        <img src="rock.png">
+    </div>
+
+    <div class="paper-image">
+        <img src="paper.png">
+    </div>
+    
+    <div class="scissors-image">
+        <img src="scissors.png">
+    </div>
+    
+    </div>
+    
 
     <div class='container'>
         <button class="rock">Rock</button>
@@ -30,6 +47,7 @@
 
     <script>
 
+    //establishing variables to select html content to manipulate, and even create html content via javaScript (p)//
     const rockButton = document.querySelector('.rock');
     const paperButton = document.querySelector('.paper');
     const scissorsButton = document.querySelector('.scissors');
@@ -73,6 +91,8 @@
     //User input is compared to randomly selected computerSelection to determine who wins the round. +1 is added to
     //whoever the winner of the round, that being playerScore or compScore. is. A console log is also returned presenting the result in
     //the players pov
+
+    //return has been replaced with creating element p, and appending the result into resultDiv//
     function playRound(playerSelection, computerSelection) {
         switch (playerSelection) {
             case 'rock':

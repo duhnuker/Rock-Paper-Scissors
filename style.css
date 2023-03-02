@@ -21,7 +21,7 @@ div {
     margin-top: 400px;
 }
 
-button {
+.rock, .paper, .scissors {
     color: white;
     background-color: black;
     padding: 15px;
@@ -35,11 +35,26 @@ span {
 .result {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 20px;
 }
 
 .winner {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    margin-right: 14px;
+    margin-top: 40px;
+}
+
+.resetGame {
+    color: white;
+    background-color: black;
+    padding: 15px;
+    border: 2px solid white;
 }

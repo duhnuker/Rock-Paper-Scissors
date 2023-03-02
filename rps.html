@@ -24,6 +24,10 @@
 
     <div class="winner"></div>
 
+    <div class=reset>
+        <button class="resetGame">Reset</button>
+    </div>
+
     <script>
 
     const rockButton = document.querySelector('.rock');
@@ -34,6 +38,8 @@
     const playerScoreSpan = document.querySelector('.player-score');
     const compScoreSpan = document.querySelector('.comp-score');
     const p = document.createElement('p');
+    const resetGame = document.querySelector('.resetGame');
+    
 
 
     let playerScore = 0;
@@ -161,6 +167,10 @@
       playRound(playerSelection, computerSelection);
       updateScores(playerScore, compScore);
       checkForWinner(playerScore, compScore);
+    })
+
+    resetGame.addEventListener('click', () => {
+        location.reload();
     })
 
     //Making use of the other established functions, the game function uses a for loop that makes it so the functions are repeated

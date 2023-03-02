@@ -114,14 +114,22 @@
         }
     }
 
+    function endGame() {
+        document.querySelector('.rock').disabled = true;
+        document.querySelector('.paper').disabled = true;
+        document.querySelector('.scissors').disabled = true;
+    }
+
     const checkForWinner = (playerScore, compScore) => {
         const h1 = document.createElement('h1');
         if (playerScore === 5) {
             h1.innerText = 'You beat the computer, well done!'
             winnerDiv.appendChild(h1);
+            endGame();
         } else if (compScore === 5) {
             h1.innerText = 'You lost to the computer, bad luck!'
             winnerDiv.appendChild(h1);
+            endGame();
         }
     }
 

@@ -24,7 +24,8 @@ div {
 button {
     color: white;
     background-color: black;
-    padding: 20px;
+    padding: 15px;
+    border: 2px solid white;
 }
 
 span {

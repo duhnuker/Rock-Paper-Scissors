@@ -150,7 +150,7 @@
     })
 
     //Making use of the other established functions, the game function uses a for loop that makes it so the functions are repeated
-    //5 times. This function prompts for userinput, takes the generated computer selection and plays the rounds.
+    //5 times. This function prompts for //userInput//, takes the generated computer selection and plays the rounds.
     //A console log is also returned each round updating the score
     //After the for loop is done, the winner, or a tie is returned finally
     /* function game() {
